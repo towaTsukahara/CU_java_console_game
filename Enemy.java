@@ -20,4 +20,15 @@ public class Enemy {
         System.out.println("Attack:" + attack);
         System.out.println("Defence:" + defence);
     }
+
+    public void attackPlayer(Player player){
+        int damage;
+        if(player.defence >= attack){
+            damage = 1;
+        }else{
+            damage = attack - player.defence;
+        }
+        player.hp = player.hp - damage;
+        System.out.println(name + "が" + player.name + "に" + damage + "ダメージ与えた");
+    }
 }
